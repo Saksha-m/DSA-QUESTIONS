@@ -1,0 +1,18 @@
+no of elements less than a[i]?
+map<int,int> m;
+for(auto i: v){
+m[i]++;
+}
+int c=0,a;
+for(auto i: m){
+a=i.second;
+m[i.first]=c;
+c+=a;
+}
+for(int i=0;i<n;i++){
+if(m.count(v[i])){
+cout<<m[v[i]]<<" ";
+}
+}
+
+
