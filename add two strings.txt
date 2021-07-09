@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string addStrings(string num1, string num2) {
+        int i=num1.size()-1;
+        int j=num2.size()-1;
+        int carry=0;
+        string v="";
+        while(i>-1||j>-1)
+        {
+            int m=i>-1?num1.at(i)-'0':0;
+            int n=j>-1?num2.at(j)-'0':0;
+            int sum=m+n+carry;
+            v+=to_string(sum%10);
+            carry=sum/10;
+            --i,--j;
+            
+            
+            
+        }
+        if(carry==1)
+            v+=to_string(1);
+        reverse(v.begin(),v.end());
+        return v;
+        
+    }
+};
